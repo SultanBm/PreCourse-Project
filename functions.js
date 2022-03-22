@@ -44,11 +44,14 @@ console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
  * Another Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  //   // Your code here
-    const array =[];
-    array
+  // Your code here
+  // let arr = [];
+  // arr = string;
+  // return arr.filter(
+  //   (element) => element === c.toLowerCase() || element === c.toUpperCase()
+  // );
 }
-// console.log(characterCount("Character Count is clever", "c"));
+console.log(characterCount("Character Count is clever", "c"));
 
 /**
  * largestIncrement(numbers):
@@ -115,9 +118,15 @@ function abbreviate(firstName, lastName) {
  */
 function isUpperCase(string) {
   // Your code here
+  let s = string.toLowerCase();
+  if (string === s) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
-// console.log(isUpperCase("JCREW"));
+console.log(isUpperCase("JCREW"));
 
 /**
  * elementInArray(numbers, x):
@@ -131,6 +140,7 @@ function isUpperCase(string) {
  */
 function elementInArray(numbers, x) {
   // Your code here
+  
 }
 // console.log(elementInArray([5, 6, 7], 8));
 
