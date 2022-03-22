@@ -20,8 +20,15 @@
  */
 function sumOdds(numbers) {
   // Your code here
+  const sum = numbers.filter((numbers) => numbers % 2 === 1);
+  console.log(sum);
+  let s = 0;
+  for (let i = 0; i < sum.length; i++) {
+    s += sum[i];
+  }
+  return s;
 }
-// console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
+console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
 /**
  * characterCount(string, c):
@@ -37,7 +44,9 @@ function sumOdds(numbers) {
  * Another Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  // Your code here
+  //   // Your code here
+    const array =[];
+    array
 }
 // console.log(characterCount("Character Count is clever", "c"));
 
