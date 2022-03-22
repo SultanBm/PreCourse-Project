@@ -73,8 +73,10 @@ console.log(characterCount("Character Count is clever", "c"));
  */
 function largestIncrement(numbers) {
   // Your code here
+  const s = numbers.map((num) => num - num);
+  s.filter((num) => num > num);
 }
-// console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
 
 /**
  * afterX(numbers, x):
