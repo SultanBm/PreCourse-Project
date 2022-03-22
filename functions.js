@@ -45,11 +45,13 @@ console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
  */
 function characterCount(string, c) {
   // Your code here
-  // let arr = [];
-  // arr = string;
-  // return arr.filter(
-  //   (element) => element === c.toLowerCase() || element === c.toUpperCase()
-  // );
+  const arr = string.split(" ");
+
+  return arr.filter(
+    (element) =>
+      element.toLowerCase() === c.toLowerCase() ||
+      element.toUpperCase() === c.toUpperCase()
+  );
 }
 console.log(characterCount("Character Count is clever", "c"));
 
@@ -140,9 +142,13 @@ console.log(isUpperCase("JCREW"));
  */
 function elementInArray(numbers, x) {
   // Your code here
-  
+  if (x === numbers.filter((num) => num === x)) {
+    return true;
+  } else {
+    return false;
+  }
 }
-// console.log(elementInArray([5, 6, 7], 8));
+console.log(elementInArray([5, 6, 7], 8));
 
 module.exports = {
   sumOdds,
