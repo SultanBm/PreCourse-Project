@@ -47,11 +47,12 @@ function characterCount(string, c) {
   // Your code here
   const arr = string.split(" ");
 
-  return arr.filter(
+  arr.filter(
     (element) =>
       element.toLowerCase() === c.toLowerCase() ||
       element.toUpperCase() === c.toUpperCase()
   );
+  return arr.length;
 }
 console.log(characterCount("Character Count is clever", "c"));
 
@@ -73,11 +74,10 @@ console.log(characterCount("Character Count is clever", "c"));
  */
 function largestIncrement(numbers) {
   // Your code here
-  
-    let  s = numbers.map((num) => num- num);
-        s.reduce((num) => num > num);
+  // let  s = numbers.map((num) => num- num);
+  //     s.reduce((num) => num > num);
 }
-console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+//console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
 
 /**
  * afterX(numbers, x):
@@ -92,9 +92,12 @@ console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
  */
 function afterX(numbers, x) {
   // Your code here
-  return numbers.slice(numbers.filter((number)=> number === x),numbers.length);
+  return numbers.slice(
+    numbers.filter((number) => number === x),
+    numbers.length
+  );
 }
-console.log(afterX([1, 2,3, 4, 5, 6, 7, 8, 9], 5));
+console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 5));
 
 /**
  * abbreviate(firstName, lastName):
@@ -109,9 +112,9 @@ console.log(afterX([1, 2,3, 4, 5, 6, 7, 8, 9], 5));
  */
 function abbreviate(firstName, lastName) {
   // Your code here
-   return firstName[0].toUpperCase() + lastName[0].toUpperCase();
+  return firstName[0].toUpperCase() + lastName[0].toUpperCase();
 }
-console.log(abbreviate("miss", "Stephane"));
+console.log(abbreviate("jordan", "peterson"));
 
 /**
  * isUpperCase(string):
