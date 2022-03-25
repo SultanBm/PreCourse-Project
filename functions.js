@@ -73,7 +73,7 @@ console.log(characterCount("Character Count is clever", "c"));
  */
 function largestIncrement(numbers) {
   // Your code here
-  const s = numbers.map((num) => num - num);
+  const s = numbers.map((num) => num- num);
   s.filter((num) => num > num);
 }
 console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
@@ -91,8 +91,9 @@ console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
  */
 function afterX(numbers, x) {
   // Your code here
+  return numbers.slice(numbers.filter((number)=> number === x));
 }
-// console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
 /**
  * abbreviate(firstName, lastName):
