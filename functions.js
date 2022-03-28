@@ -21,12 +21,9 @@
 function sumOdds(numbers) {
   // Your code here
   const sum = numbers.filter((numbers) => numbers % 2 === 1);
-  console.log(sum);
-  let s = 0;
-  for (let i = 0; i < sum.length; i++) {
-    s += sum[i];
-  }
-  return s;
+  const initial = 0;
+  const sumOfOdd = sum.reduce((i, j) => i + j, initial);
+  return sumOfOdd;
 }
 console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
@@ -45,14 +42,11 @@ console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
  */
 function characterCount(string, c) {
   // Your code here
-  const arr = string.split(" ");
-
-  arr.filter(
-    (element) =>
-      element.toLowerCase() === c.toLowerCase() ||
-      element.toUpperCase() === c.toUpperCase()
-  );
-  return arr.length;
+  const array1 = string.split("");
+  const lowerc = c.toLowerCase();
+  const lowercased = array1.map((name) => name.toLowerCase());
+  const timesCs = lowercased.filter((x) => x === lowerc);
+  return timesCs.length;
 }
 console.log(characterCount("Character Count is clever", "c"));
 
@@ -74,8 +68,15 @@ console.log(characterCount("Character Count is clever", "c"));
  */
 function largestIncrement(numbers) {
   // Your code here
-  // let  s = numbers.map((num) => num- num);
-  //     s.reduce((num) => num > num);
+  let largest = 0;
+  let temp = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    largest = numbers[i + 1] - numbers[i];
+    if (largest > temp) {
+      temp = largest;
+    }
+  }
+  return temp;
 }
 //console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
 
@@ -92,10 +93,13 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   // Your code here
-  return numbers.slice(
-    numbers.filter((number) => number === x),
-    numbers.length
-  );
+  // return numbers.slice(
+  //   numbers.filter((number) => number === x),
+  //   numbers.length
+  // );
+  let index = numbers.indexOf(x);
+  let afteerx = numbers.slice(index + 1, numbers.length);
+  return afteerx;
 }
 console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 5));
 
@@ -150,7 +154,13 @@ console.log(isUpperCase("JCREW"));
  */
 function elementInArray(numbers, x) {
   // Your code here
-  if (x === numbers.filter((num) => num === x)) {
+  // if (x === numbers.filter((num) => num === x)) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  const clean = numbers.filter((y) => y === x);
+  if (clean.length !== 0) {
     return true;
   } else {
     return false;
